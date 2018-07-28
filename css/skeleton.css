@@ -62,6 +62,18 @@ nav.primary ul ul {
   min-width: 100%;
 }
 
+nav.primary ul ul li {
+  float: none;
+  display: list-item;
+  border-bottom: 1px solid #383737;
+}
+
+nav.primary ul ul li a {
+  display: block;
+  line-height: 35px;
+  text-transform: none;
+}
+
 
 
 /* Grid
