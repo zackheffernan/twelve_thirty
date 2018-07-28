@@ -28,13 +28,11 @@
 
 /* Navigation
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
-.navigation {
+nav.button {
   position: fixed;
   top: 0;
   z-index: 100;
-}
 
-nav.button {
   text-align: center;
   display: inline-block;
   position: absolute;
