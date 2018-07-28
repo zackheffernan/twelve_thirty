@@ -42,11 +42,19 @@ nav.primary ul li {
 nav.primary ul li a {
   display: inline-block;
   line-height: 50px;
+  padding: 0 15px;
   color: #222;
   text-transform: uppercase;
   text-decoration: none;
   font-weight: bold;
 }
+
+nav.primary ul li a:hover {
+  background: #555;
+  cursor: pointer; 
+}
+
+
 
 
 /* Grid
