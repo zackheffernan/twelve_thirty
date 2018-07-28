@@ -56,17 +56,23 @@ nav.primary ul li a:hover {
 
 /*Sub Menu*/
 nav.primary ul ul {
+  opacity: 0;
+  filter: alpha(opacity=0);
+
   position: absolute;
   z-index: 999;
   background: #1EAEDB;
+
   height: 0px;
   overflow: hidden;
+
   min-width: 100%;
 }
 
 nav.primary ul li:hover ul {
   opacity: 10;
   filter: alpha(opacity=100);
+  
   height: auto;
   overflow: auto;
 }
