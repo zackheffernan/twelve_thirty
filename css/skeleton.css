@@ -54,6 +54,13 @@ nav.primary ul li a:hover {
   cursor: pointer; 
 }
 
+/*Sub Menu*/
+nav.primary ul ul {
+  position: absolute;
+  z-index: 999;
+  background: #555;
+  min-width: 100%;
+}
 
 
 
