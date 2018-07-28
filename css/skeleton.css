@@ -65,6 +65,8 @@ nav.primary ul ul {
 }
 
 nav.primary ul li:hover ul {
+  opacity: 10;
+  filter: alpha(opacity=100);
   height: auto;
   overflow: auto;
 }
