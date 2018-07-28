@@ -58,6 +58,7 @@ nav.primary ul li a:hover {
 nav.primary ul ul {
   opacity: 0;
   filter: alpha(opacity=0);
+  color: #555;
 
   position: absolute;
   z-index: 999;
@@ -72,7 +73,7 @@ nav.primary ul ul {
 nav.primary ul li:hover ul {
   opacity: 10;
   filter: alpha(opacity=100);
-  
+
   height: auto;
   overflow: auto;
 }
