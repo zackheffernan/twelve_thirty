@@ -59,7 +59,14 @@ nav.primary ul ul {
   position: absolute;
   z-index: 999;
   background: #1EAEDB;
+  height: 0px;
+  overflow: hidden;
   min-width: 100%;
+}
+
+nav.primary ul li:hover ul {
+  height: auto;
+  overflow: auto;
 }
 
 nav.primary ul ul li {
