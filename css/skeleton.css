@@ -50,7 +50,7 @@ nav.primary ul li a {
 }
 
 nav.primary ul li a:hover {
-  background: #555;
+  background: #1EAEDB;
   cursor: pointer; 
 }
 
@@ -58,14 +58,14 @@ nav.primary ul li a:hover {
 nav.primary ul ul {
   position: absolute;
   z-index: 999;
-  background: #555;
+  background: #1EAEDB;
   min-width: 100%;
 }
 
 nav.primary ul ul li {
   float: none;
   display: list-item;
-  border-bottom: 1px solid #383737;
+  border-bottom: 1px solid #FFF;
 }
 
 nav.primary ul ul li a {
