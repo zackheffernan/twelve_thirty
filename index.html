@@ -1,528 +1,229 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml"lang="en" xml:lang="en">
-<head>
+<!DOCTYPE HTML>
+<!--
+	Massively by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Massively by HTML5 UP</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
 
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />  
-    <title>Another Pony - Digital craft for screens and galleries</title>
-    
-    //CSS STYLES
-    <link href="css/reset.css" rel="stylesheet" type="text/css" />
-    <link href="css/styles.css" rel="stylesheet" type="text/css" />  
-    
-    //LOAD FONT
-    <link href='http://fonts.googleapis.com/css?family=Droid+Sans:400,700' rel='stylesheet' type='text/css'>
-    
-    //JQUERY
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-    <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.2/jquery-ui.min.js"></script>
-    <script src="scripts/jquery.backstretch.min.js"></script>
-    
-    //GOOGLE API
-    <script>
-  		(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  		(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  		m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  		})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+		<!-- Wrapper -->
+			<div id="wrapper" class="fade-in">
 
-  		ga('create', 'UA-40001439-1', 'anotherpony.com');
-  		ga('send', 'pageview');
-	</script>
-    
+				<!-- Intro -->
+					<div id="intro">
+						<h1>This is<br />
+						Massively</h1>
+						<p>A free, fully responsive HTML5 + CSS3 site template designed by <a href="https://twitter.com/ajlkn">@ajlkn</a> for <a href="https://html5up.net">HTML5 UP</a><br />
+						and released for free under the <a href="https://html5up.net/license">Creative Commons license</a>.</p>
+						<ul class="actions">
+							<li><a href="#header" class="button icon solo fa-arrow-down scrolly">Continue</a></li>
+						</ul>
+					</div>
 
+				<!-- Header -->
+					<header id="header">
+						<a href="index.html" class="logo">Massively</a>
+					</header>
 
-    <script>	
-	
-	//POSITIONING FUNCTIONS
+				<!-- Nav -->
+					<nav id="nav">
+						<ul class="links">
+							<li class="active"><a href="index.html">This is Massively</a></li>
+							<li><a href="generic.html">Generic Page</a></li>
+							<li><a href="elements.html">Elements Reference</a></li>
+						</ul>
+						<ul class="icons">
+							<li><a href="#" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+							<li><a href="#" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
+							<li><a href="#" class="icon fa-instagram"><span class="label">Instagram</span></a></li>
+							<li><a href="#" class="icon fa-github"><span class="label">GitHub</span></a></li>
+						</ul>
+					</nav>
 
-	positioning = function(){
-		var pictureHeight = $("#readhigh").height();
-		var browserWidth = $("body").innerWidth();
-		
-		$("#picture").css({ 'height': pictureHeight-55 + "px" });
-		$("#space").css({ 'height': pictureHeight+400 + "px" });		
-		$("#logo").css({ 'paddingTop': ((pictureHeight-460)/2)-55 + "px" });
-		
-		$(".follower").css({ 'left': browserWidth/2-22 + "px" });
-	}
-	
-	$(window).bind('resize', positioning);
-	
-	cross = function(){
-		$(".info").mousemove(function(crossp){
-			$(".follower").css({
-				top: (crossp.pageY+5 - $(document).scrollTop()) + "px",
-				left: (crossp.pageX+5) + "px"
-				});
-   			});			
-	}	
-			
-    $(document).ready(function(){
-		
-		positioning();
-		cross();
-		
-		$(".beta").hover(function(){
-		$(this).find(".todos").show(200);
-	
-	});
-	$(".beta").mouseleave(function(){
-		$(this).find(".todos").hide(200);
-	
-	});
-		
-	   
-	    $('.info').click(function(){
-			$(".info, .follower").fadeOut(400);			 		
-		});
-		$('.layer-text').mouseover(function(){
-			$(".follower").hide(0);	
-			$(".info").unbind("click");		 		
-		});
-		$('.layer-text').mouseout(function(){
-			$(".follower").show(0);
-			$(".info").bind("click");	
-			cross();
-			
-			//Close Layer
-			$(this).parent().parent().parent().parent().find(".info").click(function(){
-				$(".follower").fadeOut(400);	
-				$(".info").fadeOut(400, function () {
-					$('.layer-img2').animate({
-					opacity: 0,
-					marginTop: '-40px',
-				}, 0);
-				$('.layer-img1').animate({
-					opacity: 0,
-					marginTop: '-80px',
-				}, 0);
-				$('.layer-text').animate({
-					opacity: 0,
-					marginTop: '0px',
-				}, 0);
-				});				
-			});
-			 		
-		});
-		
-		//Open Contacts & Portfolio-Layers
-		$('.person-button').click(function(){
-			
-			$(this).parent().find(".info").click(function(){
-				
-				$(".follower").fadeOut(400);
-				$(".info").fadeOut(400, function () {
-					$('.layer-img2').animate({
-					opacity: 0,
-					marginTop: '-40px',
-				}, 0);
-				$('.layer-img1').animate({
-					opacity: 0,
-					marginTop: '-80px',
-				}, 0);
-				$('.layer-text').animate({
-					opacity: 0,
-					marginTop: '0px',
-				}, 0);
-				});				
-			});
-			
-			$(this).parent().find(".info").fadeIn(400, function(){
-				$(".follower").fadeIn(400);
-				
-				
-				$('.layer-img2').animate({
-					opacity: 1,
-					marginTop: '0px',
-				}, 500);
-				$('.layer-img1').animate({
-					opacity: 1,
-					marginTop: '0px',
-				}, 500);
-				$('.layer-text').animate({
-					opacity: 1,
-					marginTop: '220px',
-				}, 500);
-			});
-		});
-			
-		
-		
-        //Fade Portrait Background
-		$(".colourfader").each(function ColourLoop(){
-            $(this).
-                animate({backgroundColor:'#e5e9ec'},5000).
-                animate({backgroundColor:'#f2ead5'},5000).
-                animate({backgroundColor:'#dbe6db'},5000,ColourLoop);
-        });
-		
-		//Ficki Fucki Facebook
-		$(".fb").mouseover(function() {
-			$(".fb-like-box").fadeIn(0);
-		});
-		$(".fb").mouseout(function() {
-				$(".fb-like-box").fadeOut(0);
-		});
-		
-         //Add first Category //Fix
-		$('.projectinfo').html('The Water Cycle by Johannes');
-		$('.five').addClass("active");
-		
-		//Picture Buttons //Fix
-		 $(".one").click(function(e) {
-			 $(this).addClass("active");
-			 $('.two').removeClass("active");
-			 $('.three').removeClass("active");
-			 $('.four').removeClass("active");
-			 $('.five').removeClass("active");
-			 
-             e.preventDefault();
-             $("#picture").backstretch("img/teaser1.jpg");
-			 $('.projectinfo').html('Handmade Sculpture for &bdquo;We love 8bit&ldquo; exibition');
-			 $('.behance').attr('href','http://www.behance.net/gallery/Mario-Z/7104849'); 
-        });
-		$(".two").click(function(e) {
-			$(this).addClass("active");
-			 $('.one').removeClass("active");
-			 $('.three').removeClass("active");
-			 $('.four').removeClass("active");
-			 $('.five').removeClass("active");
-			 
-             e.preventDefault();
-             $("#picture").backstretch("img/teaser2.jpg");
-			 $('.projectinfo').html('A book about building things by Johannes and Philipp');
-			 $('.behance').attr('href','http://www.behance.net/gallery/Magazine-about-building-things/7917585');
-        });
-		$(".three").click(function(e) {
-			$(this).addClass("active");
-			 $('.one').removeClass("active");
-			 $('.two').removeClass("active");
-			 $('.four').removeClass("active");
-			 $('.five').removeClass("active");
-			 
-             e.preventDefault();
-             $("#picture").backstretch("img/teaser3.jpg");
-			 $('.projectinfo').html('Various Pony Illustrations');
-			 $('.behance').attr('href','http://www.behance.net/gallery/Design-Studio-Another-Pony-Illustration-Case-Studies/7918649');
-        });
-		$(".four").click(function(e) {
-			 $(this).addClass("active");
-			 $('.two').removeClass("active");
-			 $('.three').removeClass("active");
-			 $('.one').removeClass("active");
-			 $('.five').removeClass("active");
-			 
-             e.preventDefault();
-             $("#picture").backstretch("img/teaser4.jpg");
-			 $('.projectinfo').html('Animated marble run by Philipp');
-			 $('.behance').attr('href','http://www.behance.net/gallery/Marble-Run/8538479'); 
-        });		
-		$(".five").click(function(e) {
-			 $(this).addClass("active");
-			 $('.four').removeClass("active");
-			 $('.two').removeClass("active");
-			 $('.three').removeClass("active");
-			 $('.one').removeClass("active");
-			 
-             e.preventDefault();
-             $("#picture").backstretch("img/teaser5.jpg");
-			 $('.projectinfo').html('The Water Cycle by Johannes');
-			 $('.behance').attr('href','http://www.behance.net/gallery/The-Water-Cycle/11934447'); 
-        });
-		
-		});
-		
-		//If the site is loaded	
-		$(window).load(function(){
-			$('.loader').fadeOut(0, function() {
-				$('body').addClass("overflow");
-				$('.fader').fadeOut(600, function(){
-					//Preload Teaser
-					$('<img src="img/teaser4.jpg"/>');
-					$('<img src="img/teaser3.jpg"/>');
-					$('<img src="img/teaser2.jpg"/>');
-					$('<img src="img/teaser1.jpg"/>');
-				});
- 		 	});
-		});
-	
-    </script>
-    
+				<!-- Main -->
+					<div id="main">
 
-</head>
+						<!-- Featured Post -->
+							<article class="post featured">
+								<header class="major">
+									<span class="date">April 25, 2017</span>
+									<h2><a href="#">And this is a<br />
+									massive headline</a></h2>
+									<p>Aenean ornare velit lacus varius enim ullamcorper proin aliquam<br />
+									facilisis ante sed etiam magna interdum congue. Lorem ipsum dolor<br />
+									amet nullam sed etiam veroeros.</p>
+								</header>
+								<a href="#" class="image main"><img src="images/pic01.jpg" alt="" /></a>
+								<ul class="actions special">
+									<li><a href="#" class="button large">Full Story</a></li>
+								</ul>
+							</article>
 
-<body>
+						<!-- Posts -->
+							<section class="posts">
+								<article>
+									<header>
+										<span class="date">April 24, 2017</span>
+										<h2><a href="#">Sed magna<br />
+										ipsum faucibus</a></h2>
+									</header>
+									<a href="#" class="image fit"><img src="images/pic02.jpg" alt="" /></a>
+									<p>Donec eget ex magna. Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque venenatis dolor imperdiet dolor mattis sagittis magna etiam.</p>
+									<ul class="actions special">
+										<li><a href="#" class="button">Full Story</a></li>
+									</ul>
+								</article>
+								<article>
+									<header>
+										<span class="date">April 22, 2017</span>
+										<h2><a href="#">Primis eget<br />
+										imperdiet lorem</a></h2>
+									</header>
+									<a href="#" class="image fit"><img src="images/pic03.jpg" alt="" /></a>
+									<p>Donec eget ex magna. Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque venenatis dolor imperdiet dolor mattis sagittis magna etiam.</p>
+									<ul class="actions special">
+										<li><a href="#" class="button">Full Story</a></li>
+									</ul>
+								</article>
+								<article>
+									<header>
+										<span class="date">April 18, 2017</span>
+										<h2><a href="#">Ante mattis<br />
+										interdum dolor</a></h2>
+									</header>
+									<a href="#" class="image fit"><img src="images/pic04.jpg" alt="" /></a>
+									<p>Donec eget ex magna. Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque venenatis dolor imperdiet dolor mattis sagittis magna etiam.</p>
+									<ul class="actions special">
+										<li><a href="#" class="button">Full Story</a></li>
+									</ul>
+								</article>
+								<article>
+									<header>
+										<span class="date">April 14, 2017</span>
+										<h2><a href="#">Tempus sed<br />
+										nulla imperdiet</a></h2>
+									</header>
+									<a href="#" class="image fit"><img src="images/pic05.jpg" alt="" /></a>
+									<p>Donec eget ex magna. Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque venenatis dolor imperdiet dolor mattis sagittis magna etiam.</p>
+									<ul class="actions special">
+										<li><a href="#" class="button">Full Story</a></li>
+									</ul>
+								</article>
+								<article>
+									<header>
+										<span class="date">April 11, 2017</span>
+										<h2><a href="#">Odio magna<br />
+										sed consectetur</a></h2>
+									</header>
+									<a href="#" class="image fit"><img src="images/pic06.jpg" alt="" /></a>
+									<p>Donec eget ex magna. Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque venenatis dolor imperdiet dolor mattis sagittis magna etiam.</p>
+									<ul class="actions special">
+										<li><a href="#" class="button">Full Story</a></li>
+									</ul>
+								</article>
+								<article>
+									<header>
+										<span class="date">April 7, 2017</span>
+										<h2><a href="#">Augue lorem<br />
+										primis vestibulum</a></h2>
+									</header>
+									<a href="#" class="image fit"><img src="images/pic07.jpg" alt="" /></a>
+									<p>Donec eget ex magna. Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque venenatis dolor imperdiet dolor mattis sagittis magna etiam.</p>
+									<ul class="actions special">
+										<li><a href="#" class="button">Full Story</a></li>
+									</ul>
+								</article>
+							</section>
 
-<!-------------------------------------- BETA -------------------------------------->
-<!--<div class="beta">
-    <div class="todos">
-    Finally live but in beta. Nørdy Notes:
-    <ul style="margin:15px;">
-    	<li style="text-decoration:line-through;">Insert a beta button</li>
-      	<li>Optimize loading progress</li>
-      	<li>Make header picture clickable → slide down to studio info</li>
-        <li>Loader (new) and slide-down-Icon → should follow mouse</li>
-        <li>Add some parallax magic</li>
-        <li>Handmade typography for info layers</li>
-        <li>Make teaser pictures clickable → slide to next picture</li>
-        <li>Slide behance buttons with pictures</li>
-        <li>Show project previe on hovering bullets</li>
-        <li>Open credits while scrolling down</li>
-    </ul>
-    </div>
-	<div class="beta-button">Beta</div>
-</div>-->
+						<!-- Footer -->
+							<footer>
+								<div class="pagination">
+									<!--<a href="#" class="previous">Prev</a>-->
+									<a href="#" class="page active">1</a>
+									<a href="#" class="page">2</a>
+									<a href="#" class="page">3</a>
+									<span class="extra">&hellip;</span>
+									<a href="#" class="page">8</a>
+									<a href="#" class="page">9</a>
+									<a href="#" class="page">10</a>
+									<a href="#" class="next">Next</a>
+								</div>
+							</footer>
 
-<!-------------------------------------- LOADER -------------------------------------->
-<div class="fader table fullheight white-bg" style="position:fixed; z-index:37;">
-    <div class="td valign textalign"><img class="loader" src="img/loader.gif" width="61" height="51" /></div>
-</div>
+					</div>
 
+				<!-- Footer -->
+					<footer id="footer">
+						<section>
+							<form method="post" action="#">
+								<div class="fields">
+									<div class="field">
+										<label for="name">Name</label>
+										<input type="text" name="name" id="name" />
+									</div>
+									<div class="field">
+										<label for="email">Email</label>
+										<input type="text" name="email" id="email" />
+									</div>
+									<div class="field">
+										<label for="message">Message</label>
+										<textarea name="message" id="message" rows="3"></textarea>
+									</div>
+								</div>
+								<ul class="actions">
+									<li><input type="submit" value="Send Message" /></li>
+								</ul>
+							</form>
+						</section>
+						<section class="split contact">
+							<section class="alt">
+								<h3>Address</h3>
+								<p>1234 Somewhere Road #87257<br />
+								Nashville, TN 00000-0000</p>
+							</section>
+							<section>
+								<h3>Phone</h3>
+								<p><a href="#">(000) 000-0000</a></p>
+							</section>
+							<section>
+								<h3>Email</h3>
+								<p><a href="#">info@untitled.tld</a></p>
+							</section>
+							<section>
+								<h3>Social</h3>
+								<ul class="icons alt">
+									<li><a href="#" class="icon alt fa-twitter"><span class="label">Twitter</span></a></li>
+									<li><a href="#" class="icon alt fa-facebook"><span class="label">Facebook</span></a></li>
+									<li><a href="#" class="icon alt fa-instagram"><span class="label">Instagram</span></a></li>
+									<li><a href="#" class="icon alt fa-github"><span class="label">GitHub</span></a></li>
+								</ul>
+							</section>
+						</section>
+					</footer>
 
-<div class="follower" style="height:22px; width:22px;"></div>
+				<!-- Copyright -->
+					<div id="copyright">
+						<ul><li>&copy; Untitled</li><li>Design: <a href="https://html5up.net">HTML5 UP</a></li></ul>
+					</div>
 
-<!-------------------------------------- PICTURE -------------------------------------->
+			</div>
 
-<div class="picture-section white-bg" style="position:fixed; z-index:-2;">
-	<div id="readhigh" class="picmax center">
-    	<div id="picture"></div>
-        
-        <!------------- Navi -------------><!------------- Fix ------------->
-        <div class="navi center" style="width:100%; height:55px; background-color:#9cc3c4; max-width:1440px; line-height:56px;">
-        	<img src="img/project.svg" width="206px" height="55px" class="block" style="float:left; margin:0px 17px 0px 37px;" />
-            <div class="projectinfo white-type" style="float:left; height:55px;"></div>
-            
-            <a href="http://www.behance.net/gallery/The-Water-Cycle/11934447" class="behance" target="_blank"><span>Show this Project on Behance.com</span></a>
-            
-            <div class="dot one"></div>
-            <div class="dot two"></div>
-            <div class="dot three"></div>
-            <div class="dot four"></div>
-            <div class="dot five"></div>    
-        </div>
-        
-    </div>
-</div>
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
 
-<!------------- Fullscreen -------------><!------------- Fix ------------->
-<script>
-	$("#picture").backstretch("img/teaser5.jpg");
-</script>
-
-
-        
-        
-        
-<!-------------------------------------- PICTURE OVERLAY -------------------------------------->
-<div class="picture-section">
-	<div class="transgrey-bg picmax center" style="position:relative;">
-    	<div style="position:absolute; top:20px; right:15px; z-index:3">
-			<a class="fb" href="https://de-de.facebook.com/anotherpony" target="_blank">
-            	<img src="img/social_fb.svg" width="30px" height="30px" />
-                <div class="fb-like-box" data-href="http://www.facebook.com/anotherpony" data-width="292" data-show-faces="true" data-stream="true" data-header="false" style="display:none; position:absolute; z-index:-2; top:15px; right:45px; background-color:#FFF;">
-</div>
-            </a>
-			<a class="gm" href="https://maps.google.de/maps?q=another+pony+vorwerkstr&hl=de&sll=51.017424,7.14504&sspn=1.240601,3.56781&hq=another+pony+vorwerkstr&radius=15000&t=m&z=13&iwloc=A" target="_blank"><img src="img/social_gm.svg" width="30px" height="30px" /></a>
-		</div>
-    	<img src="img/txt_another-pony.svg" id="logo" class="block center" />
-    </div>
-</div>
-
-<!-------------------------------------- STUDIO -------------------------------------->
-
-<div class="white-bg textalign" style="padding-bottom:520px; margin-top:-55px; position:relative; z-index:2;">
-	
-    <!--Responsive Table-->
-    <div class="table center" style="padding:80px 40px 0px 40px">
-		<div class="tr">
-            <div class="td" style="width:530px; min-width:420px; vertical-align:top;">
-            	<div style="position:relative">
-                <img src="img/studio_2.jpg" width="100%" style="position:absolute; left:0px; top:0px; max-width:445px; margin-right:20px;" />
-                <img src="img/studio_1.gif" width="320" height="325" style="position:absolute; right:0px; top:165px;" />
-                </div>
-            </div>
-            <!--Gap--><div class="td" style="width:65px; min-width:30px;"></div>
-            <div class="td" style="width:370px; min-width:220px; vertical-align:bottom;">
-            	<div style="position:relative"><img src="img/txt_digital-craft.svg" class="block" style="position:absolute; top:-135px;"/></div>
-                <p style="max-width:320px; padding-top:60px;" class="textleft hyph">
-                	Established in 2012 <br />the design studio Another Pony is a collective of three designers from Hamburg Germany. Working together or alone, they spend their time creating motion and stills, objects and installations for agencies, brands, science, art and culture. Eager to create new visual languages and develop their repertoire of abilities the studio is a place for research, experiments and mutual inspiration <br />– a playground for digital and traditional media.
-                </p>
-                <p style="float:right; margin-top:90px;" class="textleft hyph">
-                    Vorwerkstr. 4, 20357 Hamburg<br />
-                    +49 (0)40 65 86 1924<br /> 
-                    <a href="mailto:hello@anotherpony.com" style="margin-top:22px;"><span>hello(at)anotherpony.com</span></a>
-                </p>
-    		</div>
-		</div>
-    </div>    
-</div>
-
-<!-------------------------------------- WHO WE ARE -------------------------------------->
-
-<div class="white-bg textalign" style="position:relative; height:950px;">
-
-	<div class="colourfader" style="width:100%; height:530px; position:absolute;"></div>
-    <div style="width:100%; position:absolute; z-index:2; top:-340px;">
-        <img class="block center"src="img/txt_who-we-are.svg"/>
-        <img class="block center"src="img/line.svg" style="padding-top:40px;"/>
-        
-        
-        <!--Responsive Table-->
-        <div class="table center" style="padding:40px 40px 330px 40px;">
-          <div class="tr">
-          <div class="td" style="width:300px; min-width:200px;">
-          
-          		<!--Info-Layer-->
-                <div class="info table fullheight transwhite-bg" style="position:fixed; top:0px; left:0px; z-index:37; display:none; border-spacing: 60px;">
-                	<div class="td valign textalign" style="background-color:#0331F7;">
-                    	<div style="width:400px; height:500px; margin:auto; position:relative;">
-                        	<div class="layer-text" style="margin:auto; position:absolute; text-align:center; width:400px; z-index:400; padding-top:15px; margin-top:60px; top:0px; opacity:0;"/>
-                           		You may want to browse a selection of my work on the <a href="http://www.behance.net/johannes_b" target="_blank">behance network</a> or send me an e-mail to <a href="mailto:mail@johannesbluemel.de">mail(at)johannesbluemel.de</a> 
-                            </div>
-                            <img class="layer-img1" src="img/popup-text.svg" width="400px" height="500px" style="position:absolute; display:block; margin-top:-80px; opacity:0; z-index:100;"/>
-                            <img class="layer-img2" src="img/snake-jb.png" width="400px"  height="500px" style="position:display:block; margin-top:-40px; opacity:0;"/>
-                  		</div>
-                	</div>
-                </div>
-                
-          		<img src="img/rune_j.svg"/>
-           		<img src="img/johannes-bluemel.jpg" style="width:100%; margin:10px 0px 10px 0px;"/>
-                <img src="img/rune_b.svg"/><br />
-                <img src="img/name_johannes.svg" style="margin-top:35px; width:100%"/>
-                <p>Motion Direction and Design</p>
-                <div class="person-button" style="margin-top:22px;"><span>Contacts and Portfolio</span></div>              
-            </div>
-            <div class="td" style="width:130px; min-width:20px;"></div>
-			<div class="td" style="width:300px; min-width:200px;">
-    
-                <!--Info-Layer-->
-                <div class="info table fullheight transwhite-bg" style="position:fixed; top:0px; left:0px; z-index:37; display:none; border-spacing: 60px;">
-                	<div class="td valign textalign" style="background-color:#0331F7;">
-                    	<div style="width:400px; height:500px; margin:auto; position:relative;">
-                        	<div class="layer-text" style="margin:auto; position:absolute; text-align:center; width:400px; z-index:400; padding-top:15px; margin-top:60px; top:0px; opacity:0;"/>
-                           		You may want to browse a selection of my work on the <a href="http://www.behance.net/philipp_m" target="_blank">behance network</a> or send me an e-mail to <a href="mailto:philipp@yorkmartin.de">philipp(at)yorkmartin.de</a> 
-                            </div>
-                            <img class="layer-img1" src="img/popup-text.svg" width="400px" height="500px" style="position:absolute; display:block; margin-top:-80px; opacity:0; z-index:100;"/>
-                            <img class="layer-img2" src="img/snake-pym.png" width="400px"  height="500px" style="position:display:block; margin-top:-40px; opacity:0;"/>
-                  		</div>
-                	</div>
-                </div>
-                
-                <img src="img/rune_p.svg"/>
-           		<img src="img/philipp-york-martin.jpg" style="width:100%; margin:10px 0px 10px 0px;"/>
-                <img src="img/rune_m.svg"/><br />
-                <img src="img/name_philipp.svg" style="margin-top:35px; width:100%"/>
-                <p>Interactive Direction and Design</p>
-                <div class="person-button" style="margin-top:22px;"><span>Contacts and Portfolio</span></div>
-            </div>
-            <div class="td" style="width:130px; min-width:20px;"></div>
-            <div class="td" style="width:300px; min-width:200px;">
-                          
-                <!--Info-Layer-->
-                <div class="info table fullheight transwhite-bg" style="position:fixed; top:0px; left:0px; z-index:37; display:none; border-spacing: 60px;">
-                	<div class="td valign textalign" style="background-color:#0331F7;">
-                    	<div style="width:400px; height:500px; margin:auto; position:relative;">
-                        	<div class="layer-text" style="margin:auto; position:absolute; text-align:center; width:400px; z-index:400; padding-top:15px; margin-top:60px; top:0px; opacity:0;"/>
-                           		You may want to browse a selection of my work on the <a href="http://www.behance.net/logic" target="_blank">behance network</a> or send me an e-mail to <a href="mailto:hello@tobiaswuestefeld.de">hello@tobiaswuestefeld.de</a> 
-                            </div>
-                            <img class="layer-img1" src="img/popup-text.svg" width="400px" height="500px" style="position:absolute; display:block; margin-top:-80px; opacity:0; z-index:100;"/>
-                            <img class="layer-img2" src="img/snake-tw.png" width="400px"  height="500px" style="position:display:block; margin-top:-40px; opacity:0;"/>
-                  		</div>
-                	</div>
-                </div>
-                
-                <img src="img/rune_t.svg"/>
-           		<img src="img/tobias-wuestefeld.jpg" style="width:100%; margin:10px 0px 10px 0px;"/>
-                <img src="img/rune_w.svg"/><br />
-                <img src="img/name_tobi.svg" style="margin-top:35px; width:100%"/>
-                <p>Motion Direction and Illustration</p>
-                <div class="person-button" style="margin-top:22px;"><span>Contacts and Portfolio</span></div>
-            </div>
-          </div>
-        </div>
-	</div>
-    
-</div>
-
-<!-------------------------------------- SPACE -------------------------------------->
-
-<div id="space" style="width:1px;"></div>
-
-<!-------------------------------------- SETUP -------------------------------------->
-
-<div class="yellow-bg grey-type">
-
-<img class="block center"src="img/txt_one-pony-is-good.svg" style="padding-top:165px; margin-top:250px;" />
-
-    <!--Responsive Table-->
-    <div class="table center" style="padding:130px 40px 130px 40px;">
-      <div class="tr">
-        <div class="td third-s textalign">
-        	<img src="img/icon_one-man.svg"/>
-            <h3 style="padding-top:25px;">One Man Show</h3>
-            <p class="hyph textleft">Tomahawk, spear or bow and arrow. Choose your weapon – each of us works on his own projects in our studio, or where he is needed.</p>
-        </div>
-        <div class="td third-s-gap"></div>
-        <div class="td third-s textalign">
-        	<img src="img/icon_team.svg"/>
-            <h3 style="padding-top:25px;">Team</h3>
-            <p class="hyph textleft">The whole tribe gathers and stands as one for the fight – to handle big and complex projects we combine our skills and work as a team.</p>
-        </div>
-        <div class="td third-s-gap"></div>
-        <div class="td third-s textalign">
-            <img src="img/icon_network.svg"/>
-            <h3 style="padding-top:25px;">Network</h3>
-            <p class="hyph textleft">We will send smoke signs to call together our blood brothers and sisters if your are in big big trouble – We are in close contact with a multiplicity of designers, animators, developers, copywriters, photographers…</p>
-        </div>
-      </div>
-    </div>
-
-</div>
-  
-<!-------------------------------------- CREDITS -------------------------------------->
-
-<div class="grey-bg white-type" style="background-image:url(img/shadow.png); background-repeat:repeat-x;">
-
-	<img style="padding-top:60px;" class="block center"src="img/txt_credits.svg"/>
-
-    <!--Responsive Table-->
-    <div class="table center" style="padding:120px 40px 130px 40px;">
-      <div class="tr">
-        <div class="td third-s">
-   	    	<h3>We worked with</h3>
-            <p class="lightgrey-type">2GH, Argonauten, Deli Pictures, Elephant 7, Feedmee, Giraffentoast, Jung von Matt, Leagas Delaney, Ogilvy, Ringzwei, Robinizer, Scholz & Friends, TBWA, DDB Tribal…</p>
-        </div>
-        <div class="td third-s-gap"></div>
-        <div class="td third-s">
-            <h3>We worked for</h3>
-            <p class="lightgrey-type">ARD, Art Directors Club, Audi, Axel Springer AG, BMW, Disney, Ikea, Konzerthaus Dortmund, Mercedes-Benz, Mont Blanc, Red Bull, Siemens, Skoda, Sony Ericsson…</p>
-        </div>
-        <div class="td third-s-gap"></div>
-        <div class="td third-s">
-            <h3>Thanks for recognition</h3>
-            <p class="lightgrey-type">8Bit Art Show, ADC, About Great People Magazine, Designcharts, e-Talents Award, FWA, FWA Site of the Day, Page Online, Red Dot Award…</p>
-        </div>
-      </div>
-    </div>
-
-</div>
-
-
-<div class="yellow-bg grey-type">
-	<img class="block center"src="img/txt_thanks.svg" style="padding-top:165px;" />
-    <div class="imprint-button" style="padding:135px 40px 20px 40px; font-size:11px;">©2013</div>
-</div>
-
-<div id="fb-root"></div>
-<script>(function(d, s, id) {
-  var js, fjs = d.getElementsByTagName(s)[0];
-  if (d.getElementById(id)) return;
-  js = d.createElement(s); js.id = id;
-  js.src = "//connect.facebook.net/de_DE/all.js#xfbml=1";
-  fjs.parentNode.insertBefore(js, fjs);
-}(document, 'script', 'facebook-jssdk'));
-</script>
-
-
-
-</body>
+	</body>
 </html>
