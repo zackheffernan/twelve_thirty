@@ -6,7 +6,7 @@
 -->
 <html>
 	<head>
-		<title>twelve_thirty</title>
+		<title>Map Page</title>
 		<meta charset="utf-8" />
 		<meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
 		<script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.48.0/mapbox-gl.js'></script>
@@ -26,15 +26,21 @@
 
 				<!-- Header -->
 					<header id="header">
-						<a href="index.html" class="logo">twelve_thirty</a>
+						<a href="index.html" class="logo">Massively</a>
 					</header>
 
 				<!-- Nav -->
 					<nav id="nav">
 						<ul class="links">
-							<li><a href="index.html">Home</a></li>
-							<li class="active"><a href="generic.html">Map Page</a></li>
+							<li><a href="index.html">This is Massively</a></li>
+							<li class="active"><a href="generic.html">Generic Page</a></li>
 							<li><a href="elements.html">Elements Reference</a></li>
+						</ul>
+						<ul class="icons">
+							<li><a href="#" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+							<li><a href="#" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
+							<li><a href="#" class="icon fa-instagram"><span class="label">Instagram</span></a></li>
+							<li><a href="#" class="icon fa-github"><span class="label">GitHub</span></a></li>
 						</ul>
 					</nav>
 
@@ -44,6 +50,7 @@
 						<!-- Post -->
 							<section class="post">
 								<header class="major">
+									<span class="date">April 25, 2017</span>
 									<h1>This is a<br />
 									Generic Page</h1>
 								</header>
@@ -91,6 +98,10 @@ map.on('load', function() {
 				'Persons_Health_care_and_social_assistance_Total', '#b3e0a7',
 				'Persons_Arts_and_recreation_services_Total', '#9fd5a6',
 				'Persons_Other_services_Total', '#333333',
+                // 'Black', '#223b53',
+                // 'Hispanic', '#e55e5e',
+                // 'Asian', '#3bb2d0',
+                /* other */ '#ccc'
 
 		],
 		'fill-extrusion-height' : {
