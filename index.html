@@ -63,50 +63,50 @@
 								</header>
 
 
-					<div id="map">
+								<div id="map">
 
-						<script>
-							mapboxgl.accessToken = 'pk.eyJ1IjoiaGVmemFjayIsImEiOiJjam0xOXI5dHcwMXB6M3dxcmQ4dHZlNTdwIn0.y9kjLEaiTkrsVbtfqm4grw';
-							var map = new mapboxgl.Map({
-								container: 'map', // container id
-								style: 'mapbox://styles/mapbox/light-v9', // stylesheet location
-								center: [151.004105, -33.813002], // starting position [lng, lat]
-								zoom: 9, 
-								pitch: 45,
-								bearing: -17.6,
-							});
-							map.on('load', function() {
+									<script>
+										mapboxgl.accessToken = 'pk.eyJ1IjoiaGVmemFjayIsImEiOiJjam0xOXI5dHcwMXB6M3dxcmQ4dHZlNTdwIn0.y9kjLEaiTkrsVbtfqm4grw';
+										var map = new mapboxgl.Map({
+											container: 'map', // container id
+											style: 'mapbox://styles/mapbox/light-v9', // stylesheet location
+											center: [151.004105, -33.813002], // starting position [lng, lat]
+											zoom: 9, 
+											pitch: 45,
+											bearing: -17.6,
+										});
+										map.on('load', function() {
 
-								map.addLayer({
-									"id": "data",
-									"type": "fill-extrusion",
-									"source": {
-										'type': 'geojson',
-										'data': data
-									},
-										'paint': {
-											'fill-extrusion-color' : {
-												'property': 'max',
-												"stops":[
-													[0, 'white'],
-													[50, 'orange']
-												]
-											},
-											'fill-extrusion-height' : {
-												'property': '2016Census_G02_NSW_SA1_EDIT_Median_tot_prsnl_inc_weekly',
-												"stops":[
-													[0.2, 0],
-													[2500, 5000]
-												]
-											},
-											'fill-extrusion-opacity': 1
-										}
-									});
-								});
-								map.addControl(new mapboxgl.FullscreenControl());
-						</script>
+											map.addLayer({
+												"id": "data",
+												"type": "fill-extrusion",
+												"source": {
+													'type': 'geojson',
+													'data': data
+												},
+													'paint': {
+														'fill-extrusion-color' : {
+															'property': 'max',
+															"stops":[
+																[0, 'white'],
+																[50, 'orange']
+															]
+														},
+														'fill-extrusion-height' : {
+															'property': '2016Census_G02_NSW_SA1_EDIT_Median_tot_prsnl_inc_weekly',
+															"stops":[
+																[0.2, 0],
+																[2500, 5000]
+															]
+														},
+														'fill-extrusion-opacity': 1
+													}
+												});
+											});
+											map.addControl(new mapboxgl.FullscreenControl());
+									</script>
 
-					</div>
+								</div>
 
 								
 								<a href="#" class="image main"><img src="images/headline_img.png" alt="" /></a>
