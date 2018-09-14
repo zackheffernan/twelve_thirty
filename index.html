@@ -8,10 +8,16 @@
 	<head>
 		<title>twelve_thirty</title>
 		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<meta name='viewport' content='initial-scale=1, maximum-scale=1, user-scalable=no' />
 		<link rel="stylesheet" href="assets/css/main.css" />
+		<script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.49.0/mapbox-gl.js'></script>
+		<link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.49.0/mapbox-gl.css' rel='stylesheet' />
 		<script src='./GEO-IND-DATA.js'></script>
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+		<style>
+			body { margin:0; padding:0; }
+			#map { position:absolute; top:0; bottom:0; width:100%; }
+		</style>
 	</head>
 	<body class="is-preload">
 
