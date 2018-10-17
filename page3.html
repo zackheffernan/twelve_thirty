@@ -8,13 +8,13 @@
 	<head>
 		<title>twelve_thirty</title>
 		<meta charset="utf-8" />
-		<meta name='viewport' content='initial-scale=1, maximum-scale=1, user-scalable=no' />
-		<script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.49.0/mapbox-gl.js'></script>
-		<link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.49.0/mapbox-gl.css' rel='stylesheet' />
+		<meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
+		<script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.50.0/mapbox-gl.js'></script>
+    	<link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.50.0/mapbox-gl.css' rel='stylesheet' />
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
-		<script src='./GEO-IND-DATA.js'></script>
 		<style>
+			body { margin:0; padding:0; }
 			#map { position:absolute; top:0; bottom:0; width:100%; }
 		</style>
 	</head>
@@ -25,7 +25,7 @@
 
 				<!-- Intro -->
 					<div id="intro">
-						<h1>PROSPECT CITY</h1>
+						<h1>PROSPECT CITYcvbn</h1>
 						<br></br>
 						<br></br>
 						<ul class="actions">
@@ -66,71 +66,16 @@
 								</header>
 
 
-								<div id="map">
-
-										<script>
-											mapboxgl.accessToken = 'pk.eyJ1IjoiaGVmemFjayIsImEiOiJjam0xOXI5dHcwMXB6M3dxcmQ4dHZlNTdwIn0.y9kjLEaiTkrsVbtfqm4grw';
-											var map = new mapboxgl.Map({
-												container: 'map', // container id
-												style: 'mapbox://styles/mapbox/light-v9', // stylesheet location
-												center: [151.004105, -33.813002], // starting position [lng, lat]
-												zoom: 9, 
-												pitch: 45,
-												bearing: -17.6,
-											});
-											map.on('load', function() {
-	
-												map.addLayer({
-													"id": "data",
-													"type": "fill-extrusion",
-													"source": {
-														'type': 'geojson',
-														'data': data
-													},
-														'paint': {
-															'fill-extrusion-color' : {
-																[
-																	'match',
-																		['get', 'max'],
-																		'Other', '#333333',
-																		'Persons_Agriculture_forestry_and_fishing_Total', '#d7191c',
-																		'Persons_Mining_Total', '#de3428',
-																		'Persons_Manufacturing_Total', '#e54f35',
-																		'Persons_Electricity_gas_water_and_waste_services_Total', '#ec6a41',
-																		'Persons_Construction_Total', '#f3854e',
-																		'Persons_Wholesale_trade_Total', '#faa15b',
-																		'Persons_Retail_trade_Total', '#feb669',
-																		'Persons_Accommodation_and_food_services_Total', '#fec47b',
-																		'Persons_Transport_postal_and_warehousing_Total', '#fed38c',
-																		'Persons_Information_media_and_telecommunications_Total', '#ffe29d',
-																		'Persons_Financial_and_insurance_services_Total', '#fff1ae',
-																		'Persons_Rental_hiring_and_real_estate_services_Total', '#ffffbf',
-																		'Persons_Professional_scientific_and_technical_services_Total', '#f0f9ba',
-																		'Persons_Administrative_and_support_services_Total', '#e1f3b5',
-																		'Persons_Public_administration_and_safety_Total', '#d2edb0',
-																		'Persons_Education_and_training_Total', '#c2e7ac',
-																		'Persons_Health_care_and_social_assistance_Total', '#b3e0a7',
-																		'Persons_Arts_and_recreation_services_Total', '#9fd5a6',
-																		'Persons_Other_services_Total', '#333333',
-																		// 'Black', '#223b53',
-																		// 'Hispanic', '#e55e5e',
-																		// 'Asian', '#3bb2d0',
-																		/* other */ '#ccc'
-																]
-															},
-															'fill-extrusion-height' : {
-																'property': '2016Census_G02_NSW_SA1_EDIT_Median_tot_prsnl_inc_weekly',
-																"stops":[
-																	[0.2, 0],
-																	[2500, 5000]
-																]
-															},
-															'fill-extrusion-opacity': 1
-														}
-													});
-												});
-										</script>
-								</div>
+								<div id='map'></div>
+									<script>
+									mapboxgl.accessToken = 'pk.eyJ1IjoiaGVmemFjayIsImEiOiJjam0xOXI5dHcwMXB6M3dxcmQ4dHZlNTdwIn0.y9kjLEaiTkrsVbtfqm4grw';
+									var map = new mapboxgl.Map({
+										container: 'map', // container id
+										style: 'mapbox://styles/mapbox/streets-v9', // stylesheet location
+										center: [-33.820148, 150.888216], // starting position [lng, lat]
+										zoom: 9 // starting zoom
+									});
+									</script>
 								
 								<a href="#" class="image main"><img src="images/headline_img.png" alt="" /></a>
 								<ul class="actions special">
