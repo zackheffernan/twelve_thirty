@@ -22,6 +22,38 @@ var map = new mapboxgl.Map({
     center: [150.89, -33.82], // starting position [lng, lat]
     zoom: 13 // starting zoom
 });
+
+map.on('load', function() {
+
+map.addLayer({
+	"id": "data",
+	"type": "fill-extrusion",
+	"source": {
+		'type': 'geojson',
+		'data': 'city.geojson'
+	},
+	'layout': {
+		'visibility': 'visible'
+		},
+	'paint': {
+			'fill-extrusion-color' : {
+				'property': 'colour',
+				'type': 'identity'
+			},
+			'fill-extrusion-height' : {
+				'type': 'identity',
+				'property': 'height'
+			},
+			'fill-extrusion-base' : {
+				'type': 'identity',
+				'property': 'base_height'
+			},
+			 'fill-extrusion-opacity': 1
+		}
+
+});
+});
+
 </script>
 
 </body>
