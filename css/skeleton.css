@@ -44,7 +44,7 @@
   position: relative; 
   height: 600px; 
   width: 100%;
-  max-width: 960px; }
+  max-width: 100%; }
 
 
 /* For devices larger than 400px */
