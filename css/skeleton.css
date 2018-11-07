@@ -40,6 +40,11 @@
   width: 100%;
   float: left;
   box-sizing: border-box; }
+.map-container {
+  position: absolute; 
+  height: 500px; 
+  width: 100%;
+  max-width: 100%; }
 
 
 /* For devices larger than 400px */
