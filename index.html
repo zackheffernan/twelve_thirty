@@ -71,6 +71,38 @@
 				    bearing: 20,
             zoom: 12.5 // starting zoom
         });
+
+        map.on('load', function() {
+
+            map.addLayer({
+              "id": "data",
+              "type": "fill-extrusion",
+              "source": {
+                  'type': 'geojson',
+                  'data': './prospect_city.geojson'
+              },
+              'layout': {
+                  'visibility': 'visible'
+                  },
+              'paint': {
+                      'fill-extrusion-color' : {
+                          'property': 'colour',
+                          'type': 'identity'
+                      },
+                      'fill-extrusion-height' : {
+                          'type': 'identity',
+                          'property': 'height'
+                      },
+                      'fill-extrusion-base' : {
+                          'type': 'identity',
+                          'property': 'base_height'
+                      },
+                        'fill-extrusion-opacity': 1
+                  }
+
+            });
+        });
+
         </script>
   </div>
   <br></br>
