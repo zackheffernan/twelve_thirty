@@ -1,1 +1,0 @@
-city = {"type":"FeatureCollection","features":[{"type":"Feature","geometry":{ "type": "Polygon","coordinates": [[[,]]]},"properties":{"height":""}},,"properties":{"height":""}},,"properties":{"height":""}}]}
